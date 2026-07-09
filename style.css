@@ -1,0 +1,473 @@
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    background: #111;
+    color: white;
+    min-height: 100vh;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    background: #1c1c1c;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #333;
+}
+
+
+header h1 {
+    margin-bottom: 20px;
+}
+
+
+.sessoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.sessao {
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background: #444;
+    color: white;
+    font-size: 16px;
+}
+
+
+.sessao.ativa {
+    background: #007bff;
+}
+
+
+
+
+/* PAINEL */
+
+.painel {
+    padding: 20px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+
+
+/* CONTADORES */
+
+.contador {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+
+.card {
+    background: #222;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 150px;
+}
+
+
+.card span {
+    display: block;
+    color: #ccc;
+}
+
+
+.card strong {
+    font-size: 30px;
+}
+
+
+.reservado strong {
+    color: yellow;
+}
+
+
+.vendido strong {
+    color: red;
+}
+
+
+
+
+
+/* AÇÕES */
+
+.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+
+.acoes input {
+    width: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+
+.acoes button {
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+
+
+/* LEGENDA */
+
+.legenda {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+
+.legenda div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.bolinha {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+
+.verde {
+    background: #00c853;
+}
+
+
+.amarelo {
+    background: #ffd600;
+}
+
+
+.vermelho {
+    background: #d50000;
+}
+
+
+
+
+
+/* MAPA */
+
+.mapa {
+    background: #181818;
+    padding: 25px;
+    border-radius: 15px;
+    overflow-x: auto;
+}
+
+
+.palco {
+    background: #777;
+    color: white;
+    width: 60%;
+    margin: 0 auto 40px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 0 0 50px 50px;
+    font-weight: bold;
+}
+
+
+
+.mapa h2 {
+    text-align: center;
+    margin: 20px;
+}
+
+
+
+
+/* ÁREA DO SALÃO */
+
+.area-assentos {
+
+    display: grid;
+
+    grid-template-columns: 60px auto 60px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 40px;
+
+}
+
+.lado {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+/* BLOCO CENTRAL 14x14 */
+
+.bloco-central {
+
+    display: grid;
+
+    grid-template-columns: repeat(14, 35px);
+
+    gap: 8px;
+transform: translateY(-200px);
+}
+
+
+
+/* COLUNAS LATERAIS */
+
+
+
+.lateral {
+
+    display: grid;
+
+    grid-template-columns: 35px;
+
+    gap: 8px;
+  transform: translateY(70px);
+}
+
+
+
+
+.assento {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 8px 8px 3px 3px;
+
+    cursor: pointer;
+
+    background: #00c853;
+
+    color: black;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    transition: .2s;
+
+}
+
+
+
+.assento:hover {
+
+    transform: scale(1.15);
+
+}
+
+
+
+.assento.reservado {
+
+    background: #ffd600;
+
+}
+
+
+
+.assento.vendido {
+
+    background: #d50000;
+
+    color:white;
+
+}
+
+
+
+
+
+/* MODAL */
+
+
+.modal {
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.8);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:10;
+
+}
+
+
+
+.modal.ativo {
+
+    display:flex;
+
+}
+
+
+
+.modal-conteudo {
+
+    background:#222;
+
+    padding:25px;
+
+    width:350px;
+
+    border-radius:15px;
+
+}
+
+
+
+.fechar {
+
+    float:right;
+
+    background:red;
+
+    color:white;
+
+    border:none;
+
+    padding:5px 10px;
+
+    cursor:pointer;
+
+}
+
+
+
+.modal-conteudo label {
+
+    display:block;
+
+    margin-top:15px;
+
+}
+
+
+
+.modal-conteudo input,
+.modal-conteudo select {
+
+    width:100%;
+
+    padding:10px;
+
+    margin-top:5px;
+
+    border-radius:8px;
+
+    border:none;
+
+}
+
+
+
+.botoesModal {
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+
+
+.botoesModal button {
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+
+
+#salvarAssento {
+
+    background:#00c853;
+
+}
+
+
+
+#liberarAssento {
+
+    background:#d50000;
+
+    color:white;
+
+}
+
+
+
+
+
+/* CELULAR */
+
+

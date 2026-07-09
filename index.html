@@ -1,0 +1,221 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mapa de Assentos - Espetáculo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Mapa de Assentos</h1>
+
+    <div class="sessoes">
+        <button class="sessao ativa" data-sessao="S1">
+            Sessão 1
+        </button>
+
+        <button class="sessao" data-sessao="S2">
+            Sessão 2
+        </button>
+    </div>
+</header>
+
+
+<main>
+
+    <section class="painel">
+
+        <div class="contador">
+
+            <div class="card">
+                <span>Disponíveis</span>
+                <strong id="disponiveis">0</strong>
+            </div>
+
+            <div class="card reservado">
+                <span>Reservados</span>
+                <strong id="reservados">0</strong>
+            </div>
+
+            <div class="card vendido">
+                <span>Vendidos</span>
+                <strong id="vendidos">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="acoes">
+
+            <input 
+                type="text" 
+                id="pesquisa"
+                placeholder="Pesquisar comprador..."
+            >
+
+            <button id="exportar">
+                Exportar CSV
+            </button>
+
+        </div>
+
+
+        <div class="legenda">
+
+            <div>
+                <span class="bolinha verde"></span>
+                Disponível
+            </div>
+
+            <div>
+                <span class="bolinha amarelo"></span>
+                Reservado
+            </div>
+
+            <div>
+                <span class="bolinha vermelho"></span>
+                Vendido
+            </div>
+
+        </div>
+
+
+        <div id="resultadoPesquisa"></div>
+
+
+
+        <section class="mapa">
+
+
+            <div class="palco">
+                PALCO
+           
+
+
+          
+<div class="area-assentos">
+
+
+    <div class="lado">
+        <h2>Lateral Esquerda</h2>
+        <div id="esquerda" class="lateral"></div>
+    </div>
+
+
+    <div>
+        <h2>Bloco Central</h2>
+        <div id="central" class="bloco-central"></div>
+    </div>
+
+
+    <div class="lado">
+        <h2>Lateral Direita</h2>
+        <div id="direita" class="lateral"></div>
+    </div>
+
+
+</div>
+          
+        </section>
+
+
+    </section>
+
+
+</main>
+
+
+
+
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+    <div class="modal-conteudo">
+
+        <button id="fecharModal" class="fechar">
+            X
+        </button>
+
+
+        <h2 id="tituloModal">
+            Assento
+        </h2>
+
+
+        <label>
+            Nome do comprador
+        </label>
+
+        <input 
+            type="text" 
+            id="nomeComprador"
+        >
+
+
+        <label>
+            Telefone
+        </label>
+
+        <input 
+            type="text"
+            id="telefoneComprador"
+        >
+
+
+        <label>
+            Status
+        </label>
+
+
+        <select id="statusAssento">
+
+            <option value="disponivel">
+                Disponível
+            </option>
+
+            <option value="reservado">
+                Reservado
+            </option>
+
+            <option value="vendido">
+                Vendido
+            </option>
+
+        </select>
+
+
+
+        <div class="botoesModal">
+
+            <button id="salvarAssento">
+                Salvar
+            </button>
+
+
+            <button id="liberarAssento">
+                Liberar assento
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
